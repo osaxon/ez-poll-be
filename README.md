@@ -1,10 +1,14 @@
-# Starter template for Node.JS
+# EZ Poll
 
-This is a starter template for building web applications using Node.js, TypeScript, Express, Postgres.
+A web-socket service and API built with Node.JS, Express and Socket.IO.
 
 ## Features
 
 - 🏃 **Node.js:** A JavaScript runtime built on Chrome's V8 JavaScript engine, designed for building scalable network applications.
+
+- 🔌 **Socket.IO** A web-socket server framework for the Node runtime.
+
+- 🔐 **Auth0** API routes protected with JWT's with authentication provided by Auth0.
 
 - 🥽 **TypeScript:** A superset of JavaScript that adds static typing, enabling a more robust development experience and improved code quality.
 
@@ -57,28 +61,6 @@ This is a starter template for building web applications using Node.js, TypeScri
 
    The server will be running at `http://localhost:3000`.
 
-6. **Create a Test user in the DB:**
-
-This can be done manually with a SQL statement or in admin console like pgAdmin, or you can make a POST request to the /user endpoint. To do that, first remove the auth middleware on the createUser route:
-
-`userRouter.ts:`
-
-```js
-// remove the isAuthenticated middleware to create a test user via REST call
-userRouter.post(UserRoutes.ROOT, isAuthenticated([Role.Admin]), createUser);
-```
-
-The request body should be:
-
-```json
-{
- "email": "email@",
- "password": "password123",
- "role": "admin" // defaults to "user"
-}
-```
-
-Update the `TEST_USER_PASSWORD` environment variable with the password set for the new user.
 
 ## Scripts
 
